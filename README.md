@@ -18,6 +18,7 @@ Web app to visualize sleep data
 ### Useage
 - Click on the User icons to change which user data the app displays
 - The top Piecharts represent the stags of the 3 intervals (3 Nights)
+- Number of Toss and Turns shown below Piecharts because high number seems to less deep sleep time.
 - Heart Rate and Respitory Rate Linechart shows the heart rate in the same time periods.
 - Bed and Room Tempature Linechart shows the coorelation between them.
 ### Run Locally
