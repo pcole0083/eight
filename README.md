@@ -7,6 +7,7 @@ Web app to visualize sleep data
 ## Frontend
 - Materialize for grid, icons, colors.
 - Chartjs (by means of react-chartjs) to create the charts
+- Uses Fetch API to do an async call to the backend to get the new data
 ### Components
 1. Piechart: wrapper around react-chartjs Pie component
 2. Linechart: wrapper around react-chartjs Line component
