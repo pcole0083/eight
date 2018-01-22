@@ -22,13 +22,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchUser(1);
+    this.fetchUser(1); //initial fetch of data
   }
 
-  // componentDidUpdate(){
-  //   console.log(this.state.user);
-  // }
-
+  //get user data from the backend
+  //express app backend async calls the JSON files
   fetchUser = id => {
     fetch('/users/'+id)
       .then(res => res.json())
@@ -66,6 +64,14 @@ class App extends Component {
       .reduce(( a, b ) => {
         return a + b;
       }, 0);
+  }
+
+  //get Toss & Turn Data
+  getTntCount(interval){
+    var tnt = !!interval.timeseries ? interval.timeseries.tnt : [];
+    return (
+      <div className="tnt-count">Number of Toss & Turns: {tnt.length}</div>
+    );
   }
 
   //create a series of pie charts
@@ -108,10 +114,13 @@ class App extends Component {
       ];
     }) : [];
 
+
+
     return datapoints.map((data,index) => {
       return (<div key={index} className="col s12 m12 l4">
         <h5>Night {index+1} Stages</h5>
         <Piechart data={data} width="100%" height="auto" />
+        { this.getTntCount(this.state.user.intervals[index]) }
       </div>);
     });
   }
