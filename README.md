@@ -4,11 +4,13 @@ Web app to visualize sleep data
 - Express app created to pull data from an external server
 - Basic setup done by express-generator
 - By going to /users/:id it will pull to cooresponding JSON file from S3 server
+- Uses r2 module to polyfill fetch api to make async calls to S3
 - Build on Node v8.9.4
 ## Frontend
-- Materialize for grid, icons, colors.
-- Chartjs (by means of react-chartjs) to create the charts
-- Uses Fetch API to do an async call to the backend to get the new data
+- Create React App was used to generate the starting point of the Frontend app.
+- Materialize CSS for grid, icons, colors.
+- Chartjs (by means of react-chartjs) to create the charts.
+- Uses Fetch API to do a async calls to the backend to get the json data.
 ### Components
 1. Piechart: wrapper around react-chartjs Pie component
 2. Linechart: wrapper around react-chartjs Line component
