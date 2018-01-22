@@ -25,3 +25,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+canvas {
+  max-width: 100%;
+}
+
+.btn > i {
+  pointer-events: none;
+}
