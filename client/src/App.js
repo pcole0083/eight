@@ -197,8 +197,10 @@ class App extends Component {
       }
 
       //the rendered canvas element max-width is 100%
-      //on screen sizes less than the width here, the pointer events get thrown off 
-      return (<div className="col s12 m12 l12 x12"><h4>{heading}</h4><Linechart data={linedata} width="800" height="500" /></div>);
+      //on screen resize, screen sizes less than the width set here, the pointer events get thrown off, on larger screens the chart stays small
+      //adding on a width based on parent element size might be best? would eventually get too small I think
+      
+      return (<div className="col s12 m12 l6 x6"><h4>{heading}</h4><Linechart data={linedata} height="400" /></div>);
     }
   }
 
@@ -224,9 +226,7 @@ class App extends Component {
             </div>
             <div className="row">
               { this.createLineChart('heartRate', 'HR & Breathing over 3 Nights', '#3f51b5', 'respiratoryRate') }
-            </div>
-            <div className="row">
-              { this.createLineChart('tempBedC', 'Bedn & Room Temps over 3 Nights', '#3f51b5', 'tempRoomC') }
+              { this.createLineChart('tempBedC', 'Beds & Room Temps over 3 Nights', '#3f51b5', 'tempRoomC') }
             </div>
           </div>
         </div>
