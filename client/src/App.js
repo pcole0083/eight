@@ -28,7 +28,7 @@ class App extends Component {
   //get user data from the backend
   //express app backend async calls the JSON files
   fetchUser = id => {
-    fetch('/users/'+id)
+    fetch(window.location.origin+'/users/'+id)
       .then(res => {
         if(res.ok){
           return res.json();
