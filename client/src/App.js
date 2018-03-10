@@ -29,11 +29,17 @@ class App extends Component {
   //express app backend async calls the JSON files
   fetchUser = id => {
     fetch('/users/'+id)
-      .then(res => res.json())
+      .then(res => {
+        if(res.ok){
+          return res.json();
+        }
+        throw new Error('Network responsed with: '+res.status+' '+res.statusText);
+      })
       .then(user => {
         user.intervals = user.intervals.reverse();
         this.setState({ user });
-      });
+      })
+      .catch(error => console.error('Error:', error));
   }
 
   //click event on the user icons
@@ -63,7 +69,7 @@ class App extends Component {
       })
       .reduce(( a, b ) => {
         return a + b;
-      }, 0);
+      }, 0) / 60;
   }
 
   //get Toss & Turn Data
@@ -97,7 +103,7 @@ class App extends Component {
           value: awake,
           color:"#1565c0",
           highlight: "#2196f3",
-          label: "Out"
+          label: "Awake"
         },
         {
           value: light,
