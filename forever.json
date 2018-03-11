@@ -6,15 +6,6 @@
     "watch": true,
     "script": "bin/www",
     "sourceDir": "./",
-    "args": ["--port", "3001"]
-  },
-  {
-    // App2
-    "uid": "reactjs",
-    "append": true,
-    "watch": true,
-    "script": "index.html",
-    "sourceDir": "./client/build",
     "args": ["--port", "80"]
   }
 ]
