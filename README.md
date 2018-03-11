@@ -1,5 +1,7 @@
 # eight
-Web app to visualize sleep data 
+Web app to visualize sleep data
+
+Demo: http://nodejs-eightsleepchallenge.com/
 ## Backend
 - Express app created to pull data from an external server
 - Basic setup done by express-generator
