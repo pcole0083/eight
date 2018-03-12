@@ -43,7 +43,7 @@ class Linechart extends Component {
 
   //the resize method does not really seem to work. The style width and height are updated but not the canvas width and height
   render() {
-    return <Line data={this.props.data} options={this.props.options} width={this.state.width} height={this.state.width} />
+    return <Line data={this.state.data} options={this.props.options} width={this.state.width} height={this.state.width} redraw />
   }
 }
  
